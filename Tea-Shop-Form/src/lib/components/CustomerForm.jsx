@@ -110,7 +110,7 @@ const CustomerForm = () => {
               Click here <span className="arrow">➜</span>
             </p>
             <a
-              href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+              href="https://play.google.com/store/apps/details?id=com.celfonphonebookapp&pcampaignid=web_share"
               target="_blank"
               rel="noopener noreferrer"
               className="playstore-badge-link"
