@@ -111,10 +111,10 @@ const CustomerForm = () => {
         <div className="form-section">
 
           <div className="info-box">
-            <h2>Get Your Reward</h2>
+            <h2>Welcome To Kovai</h2>
             <p>
-              Enter your details to receive offers, updates and rewards from
-              <strong> Signpost CELFON BOOK</strong>.
+              If Youre searching for any Firm or Product Supplier at coimbatore Find in
+              <strong>CELFON BOOK</strong>. type Your Name, Number <br /> Open <strong>CELFON BOOK</strong> APP and Find
             </p>
           </div>
 
