@@ -114,7 +114,7 @@ const CustomerForm = () => {
             <h2>Get Your Reward</h2>
             <p>
               Enter your details to receive offers, updates and rewards from
-              <strong> Signpost PHONE BOOK</strong>.
+              <strong> Signpost CELFON BOOK</strong>.
             </p>
           </div>
 
