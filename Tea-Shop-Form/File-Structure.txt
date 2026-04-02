@@ -1,0 +1,36 @@
+ 
+└── 📁 Tea-Shop-Form/
+    ├── 📁 public/
+    │   ├── 🖼️ favicon.svg
+    │   └── 🖼️ icons.svg
+    ├── 📁 src/
+    │   ├── 📁 assets/
+    │   │   ├── 🖼️ hero.png
+    │   │   ├── 🖼️ react.svg
+    │   │   └── 🖼️ vite.svg
+    │   ├── 📁 lib/
+    │   │   ├── 📁 components/
+    │   │   │   └── 📄 CustomerForm.jsx
+    │   │   ├── 📁 controllers/
+    │   │   │   └── 📄 customerController.js
+    │   │   ├── 📁 css/
+    │   │   │   └── 🎨 form.css
+    │   │   ├── 📁 models/
+    │   │   │   └── 📄 customerModel.js
+    │   │   ├── 📁 services/
+    │   │   │   └── 📄 supabaseClient.js
+    │   │   └── 📁 utils/
+    │   │       └── 📄 promoMap.js
+    │   ├── 🎨 App.css
+    │   ├── 📄 App.jsx
+    │   ├── 🎨 index.css
+    │   └── 📄 main.jsx
+    ├── ⚙️ .gitignore
+    ├── 📄 File-Structure.txt
+    ├── 📝 README.md
+    ├── 📄 eslint.config.js
+    ├── 🌐 index.html
+    ├── ⚙️ package-lock.json
+    ├── ⚙️ package.json
+    └── 📄 vite.config.js
+ 

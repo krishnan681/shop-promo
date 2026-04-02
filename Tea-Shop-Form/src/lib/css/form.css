@@ -1,0 +1,267 @@
+:root {
+  --primary: #1e3a8a;
+  --accent: #f39c12;
+  --bg: #f8f9fa;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--bg);
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* HERO - Shop Name with White Background at Top */
+.hero {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.shop-name-box {
+  background: white;
+  /* display: inline-block; */
+  padding: 10px 24px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
+}
+
+.shop-name-box h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.offer-text {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+/* FORM SECTION */
+.form-section {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-box {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.info-box h2 {
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 16px 14px;
+  margin-top: 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: var(--radius);
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+button:hover:not(:disabled) {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* APP BOX, FOOTER, etc. - Same as before */
+.app-box {
+  margin-top: 32px;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.app-box p {
+  margin: 6px 0;
+  font-size: 14.5px;
+  color: #374151;
+}
+
+.app-name {
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+.fon {
+  color: #3498db;
+}
+
+.click-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 12px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.arrow {
+  transition: transform 0.4s ease;
+}
+
+.app-box:hover .arrow {
+  transform: translateX(8px);
+}
+
+.playstore-badge {
+  width: 170px;
+  height: auto;
+}
+
+.playstore-badge:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 24px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.company {
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.copyright {
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+.error-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.error-screen h2 {
+  color: #ef4444;
+  margin-bottom: 12px;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .container {
+    max-width: 960px;
+    margin: 40px auto;
+    border-radius: 20px;
+    flex-direction: row;
+    min-height: auto;
+  }
+
+  .hero {
+    width: 45%;
+    height: auto;
+    min-height: 520px;
+  }
+
+  .form-section {
+    width: 55%;
+    padding: 50px 45px;
+  }
+
+  .shop-name-box h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 240px;
+  }
+  
+  .form-section {
+    padding: 20px;
+  }
+
+  .shop-name-box h1 {
+    font-size: 22px;
+  }
+}
