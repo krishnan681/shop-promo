@@ -50,8 +50,8 @@ const CustomerForm = () => {
 
       const result = await Swal.fire({
         icon: "success",
-        title: "🎉 Reward Unlocked!",
-        text: "Your offer has been successfully claimed.",
+        title: "🎉 Your Needs are Ready",
+        text: "Open CELFON BOOK and Find",
         confirmButtonText: "Download App",
         showCancelButton: true,
         cancelButtonText: "Close",
@@ -113,8 +113,7 @@ const CustomerForm = () => {
           <div className="info-box">
             <h2>Welcome To Kovai</h2>
             <p>
-              If Youre searching for any Firm or Product Supplier at coimbatore Find in
-               <strong>CELFON BOOK</strong>. <br /> type Your Name, Number <br /> Open <strong>CELFON BOOK</strong> APP and Find
+              If Youre searching for any Firm or Product Supplier at coimbatore Find in <strong>CELFON BOOK</strong> App.
             </p>
           </div>
 
