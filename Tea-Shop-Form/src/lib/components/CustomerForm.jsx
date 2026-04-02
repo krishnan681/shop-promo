@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 import { handleCustomerSubmit } from "../controllers/customerController";
 import { promoMap } from "../utils/promoMap";
 import "../css/form.css";
@@ -9,13 +9,13 @@ const CustomerForm = () => {
   const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [shopImage, setShopImage] = useState("");
-  
+
   const bidParam = searchParams.get("bid");
   const bakeryid = bidParam ? Number(bidParam) : null;
-  
+
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
-  
+
   const shopName = bakeryid ? promoMap[bakeryid] : null;
 
   useEffect(() => {
@@ -25,19 +25,57 @@ const CustomerForm = () => {
       3: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086",
       4: "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
     };
+
     setShopImage(images[bakeryid] || images[1]);
   }, [bakeryid]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    // ✅ MOBILE VALIDATION
+    if (!/^[6-9][0-9]{9}$/.test(mobile)) {
+      Swal.fire({
+        icon: "warning",
+        title: "Invalid Mobile Number",
+        text: "Enter a valid 10-digit number starting with 6–9",
+        confirmButtonColor: "#000",
+      });
+      setLoading(false);
+      return;
+    }
+
     try {
       await handleCustomerSubmit({ name, mobile, bakeryid });
-      toast.success("🎉 Reward unlocked! Check your SMS");
+
+      const result = await Swal.fire({
+        icon: "success",
+        title: "🎉 Reward Unlocked!",
+        text: "Your offer has been successfully claimed.",
+        confirmButtonText: "Download App",
+        showCancelButton: true,
+        cancelButtonText: "Close",
+        confirmButtonColor: "#000",
+      });
+
+      // Redirect to Play Store
+      if (result.isConfirmed) {
+        window.open(
+          "https://play.google.com/store/apps/details?id=com.celfonphonebookapp&pcampaignid=web_share",
+          "_blank"
+        );
+      }
+
       setName("");
       setMobile("");
+
     } catch (err) {
-      toast.error(err.message);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: err.message,
+        confirmButtonColor: "#000",
+      });
     } finally {
       setLoading(false);
     }
@@ -54,9 +92,9 @@ const CustomerForm = () => {
 
   return (
     <div className="page-wrapper">
-      <Toaster position="bottom-center" />
       <div className="container">
-        {/* HERO - Shop Name with White Background at Top */}
+
+        {/* HERO */}
         <div
           className="hero"
           style={{ backgroundImage: `url(${shopImage})` }}
@@ -69,8 +107,9 @@ const CustomerForm = () => {
           </div>
         </div>
 
-        {/* FORM SECTION */}
+        {/* FORM */}
         <div className="form-section">
+
           <div className="info-box">
             <h2>Get Your Reward</h2>
             <p>
@@ -80,6 +119,7 @@ const CustomerForm = () => {
           </div>
 
           <form onSubmit={handleSubmit}>
+            {/* NAME */}
             <input
               type="text"
               placeholder="Enter Your Name"
@@ -87,13 +127,21 @@ const CustomerForm = () => {
               onChange={(e) => setName(e.target.value)}
               required
             />
+
+            {/* MOBILE */}
             <input
               type="tel"
+              inputMode="numeric"
               placeholder="Enter Mobile Number"
               value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+                setMobile(value);
+              }}
+              maxLength={10}
               required
             />
+
             <button type="submit" disabled={loading}>
               {loading ? "Processing..." : "Claim My Reward"}
             </button>
@@ -106,9 +154,11 @@ const CustomerForm = () => {
               <span className="app-name">Cel</span>
               <span className="app-name fon">fon</span> book app for more rewards
             </p>
+
             <p className="click-text">
               Click here <span className="arrow">➜</span>
             </p>
+
             <a
               href="https://play.google.com/store/apps/details?id=com.celfonphonebookapp&pcampaignid=web_share"
               target="_blank"
@@ -123,18 +173,21 @@ const CustomerForm = () => {
             </a>
           </div>
 
-          {/* TRUST + COMPANY INFO */}
+          {/* FOOTER */}
           <div className="footer">
             <p>🔒 Your data is secure and will not be misused</p>
+
             <p className="company">
               Signpost Celfon.in Technology<br />
               Coimbatore - 641021<br />
               📞 95145 55132
             </p>
+
             <p className="copyright">
               © 2025 SIGNPOST CELFON.IN TECHNOLOGY
             </p>
           </div>
+
         </div>
       </div>
     </div>
