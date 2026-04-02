@@ -114,7 +114,7 @@ const CustomerForm = () => {
             <h2>Welcome To Kovai</h2>
             <p>
               If Youre searching for any Firm or Product Supplier at coimbatore Find in
-              <strong>CELFON BOOK</strong>. type Your Name, Number <br /> Open <strong>CELFON BOOK</strong> APP and Find
+               <strong>CELFON BOOK</strong>. <br /> type Your Name, Number <br /> Open <strong>CELFON BOOK</strong> APP and Find
             </p>
           </div>
 
