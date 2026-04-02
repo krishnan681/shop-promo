@@ -143,7 +143,7 @@ const CustomerForm = () => {
             />
 
             <button type="submit" disabled={loading}>
-              {loading ? "Processing..." : "Claim My Reward"}
+              {loading ? "Processing..." : "Open CELFON BOOK"}
             </button>
           </form>
 
