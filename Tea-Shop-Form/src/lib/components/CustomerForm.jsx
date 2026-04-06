@@ -24,7 +24,7 @@ const CustomerForm = () => {
     2: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
     3: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086",
     4: "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
-    5: "https://images.unsplash.com/photo-1581091012184-5c7d4d0c5b1d", // ✅ Add image for CRM Traders
+    5: "https://images.unsplash.com/photo-1771440048260-54999f9ff2db?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // ✅ Add image for CRM Traders
   };
 
   setShopImage(images[bakeryid] || images[1]);
