@@ -180,7 +180,7 @@ const CustomerForm = () => {
             <p className="company">
               Signpost Celfon.in Technology<br />
               Coimbatore - 641021<br />
-              📞 95145 55132
+              📞 98436 57564
             </p>
 
             <p className="copyright">

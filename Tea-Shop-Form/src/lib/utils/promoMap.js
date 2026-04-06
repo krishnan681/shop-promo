@@ -3,5 +3,5 @@ export const promoMap = {
   2: "Tea Boy LIC",
   3: "Tea Boy Kamaraj Nagar",
   4: "T Komuraj Tea Stall",
-  5: "CRM Traders", // ✅ Added new entry
+  5: "CMR Traders", 
 };
