@@ -18,16 +18,17 @@ const CustomerForm = () => {
 
   const shopName = bakeryid ? promoMap[bakeryid] : null;
 
-  useEffect(() => {
-    const images = {
-      1: "https://images.unsplash.com/photo-1555507036-ab1f4038808a",
-      2: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
-      3: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086",
-      4: "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
-    };
+ useEffect(() => {
+  const images = {
+    1: "https://images.unsplash.com/photo-1555507036-ab1f4038808a",
+    2: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
+    3: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086",
+    4: "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+    5: "https://images.unsplash.com/photo-1581091012184-5c7d4d0c5b1d", // ✅ Add image for CRM Traders
+  };
 
-    setShopImage(images[bakeryid] || images[1]);
-  }, [bakeryid]);
+  setShopImage(images[bakeryid] || images[1]);
+}, [bakeryid]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
